@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class FinalProyect {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Cinema cinema = new Cinema();
         Scanner menu = new Scanner(System.in);
         Scanner datos = new Scanner(System.in);
         boolean programa = true, sesion = false;
@@ -23,7 +23,7 @@ public class FinalProyect {
         User usuario = new User(" "," "," "," "," ");
         OUTER:
         while (programa) {
-            if (" ".equals(usuario.getUser()) && " ".equals(usuario.getEmailadress())) {
+            //if (" ".equals(usuario.getUser()) && " ".equals(usuario.getEmailadress())) {
                 System.out.println("\n***********************************"
                         + "\n*****BIENVENIDO AL CINE CENTER*****"
                         + "\n***********************************"
@@ -47,10 +47,12 @@ public class FinalProyect {
                             if(sesion == true){
                                 System.out.println("\nBienvenido " + usuario.getUser());
                                 if (usuario.getUser() == "ADMINISTRADOR"){
-                                    System.out.println("OPCIONES DE ADMINISTRADOR");
+                                    var administrator = new Administrator(cinema);
+                                    administrator.showAdministratorOptions();
                                 }
                                 else{
-                                    System.out.println("OPCIONES DE USUARIO ESTANDAR");
+                                    var customer = new Customer(cinema);
+                                    customer.showCustomerOptions();
                                 }
                             }
                             else{
@@ -90,7 +92,9 @@ public class FinalProyect {
                         System.out.println("\nIngrese una opción valida");
                         break;
                 }
-            }
+            //}
         }
+     
     }
+    
 }
