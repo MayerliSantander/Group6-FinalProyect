@@ -12,8 +12,8 @@ public class Cinema {
     int phoneNumber;
     String emailAdress;
     //List<Sala> salas;
-    Cartelera cartelera = new Cartelera();
+    Billboard billboard = new Billboard();
     public void addMovieToBillboard(Movie movie){
-        cartelera.addMovie(movie);
+        billboard.addMovie(movie);
     }
 }

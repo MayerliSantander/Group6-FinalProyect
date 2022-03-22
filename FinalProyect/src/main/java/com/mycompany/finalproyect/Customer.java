@@ -33,7 +33,7 @@ public class Customer {
             chosenOption = menu.nextInt();
             switch (chosenOption) {
                 case 1:
-                    cinema.cartelera.showBillboard();
+                    cinema.billboard.showBillboard();
                     break;
                 case 2:
                     

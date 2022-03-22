@@ -52,7 +52,7 @@ public class Administrator {
                 break;
                 case 2:
                     System.out.println("\n**********************************\n* Seleccione la Pelicula a eliminar: *\n**********************************");
-                    var names = cinema.cartelera.getMovieNames();
+                    var names = cinema.billboard.getMovieNames();
                     for(int i = 0; i<names.length; i++){
                         System.out.println((i + 1) + ". " + names[i]);
                     }
@@ -60,12 +60,12 @@ public class Administrator {
                     if(chosenMovie>names.length || chosenMovie<=0){
                         System.out.println("Numero no esta en la lista");
                     } else{
-                        cinema.cartelera.removeMovie(names[chosenMovie-1]);
+                        cinema.billboard.removeMovie(names[chosenMovie-1]);
                         System.out.println("Se ha removido la Pelicula "+ names[chosenMovie-1]);
                     }
                     break;
                 case 3:
-                    cinema.cartelera.showBillboard();
+                    cinema.billboard.showBillboard();
                     break;
                 case 4:
                     salir = true;

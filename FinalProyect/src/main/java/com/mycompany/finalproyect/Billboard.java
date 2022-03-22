@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author fundacion
  */
-public class Cartelera {
+public class Billboard {
     List<Movie> movies = new ArrayList();
     
     public void showBillboard(){
