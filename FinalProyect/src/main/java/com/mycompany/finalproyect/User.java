@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author fundacion
+ * @author Ignacio
  */
 public class User {
     private String name;
@@ -19,7 +19,11 @@ public class User {
     private String user;
     private String emailadress;
     private String contraseña;
-    private String[][] lista_usuarios = new String[100][5];
+    private ArrayList<String> email_list = new ArrayList<>();
+    private ArrayList<String> password_list = new ArrayList<>();
+    private ArrayList<String> user_list = new ArrayList<>();
+    private ArrayList<String> name_list = new ArrayList<>();
+    private ArrayList<String> lastname_list = new ArrayList<>();
     private final boolean[] correo_correcto = new boolean[1];
 
     public User(String name, String lastname, String user, String emailadress, String contraseña) {
@@ -29,8 +33,11 @@ public class User {
         this.emailadress = emailadress;
         this.contraseña = contraseña;
         //Usuario Administrador
-        lista_usuarios[0][0] = "YkdRyN#dTStB3jzULDmD@6Oqqw4wYp";
-        lista_usuarios[0][1] = "447982761810495398113920963649";    
+        email_list.add("administrador4321@gmail.com");
+        password_list.add("447982761810495398113920963649"); 
+        user_list.add("ADMINISTRADOR");
+        name_list.add(" ");
+        lastname_list.add(" ");
     }
 
     public String getEmailadress() {
@@ -51,7 +58,7 @@ public class User {
         emailadress = emailadress2;
         contraseña = contraseña2;
         //verificar validez del correo ingresado
-        ArrayList<String> email = new ArrayList<String>();  
+        ArrayList<String> email = new ArrayList<>();  
         //Correo a verificar  
         email.add(emailadress);    
         //Expresiones regularmente usadas en correos   
@@ -64,49 +71,52 @@ public class User {
             Matcher matcher = pattern.matcher(email1);
             correo_correcto[0] = matcher.matches();
             if (correo_correcto[0] == true){
-               for(int i = 0;i<lista_usuarios.length;i++){
-                   if (lista_usuarios[i][0] == null || lista_usuarios[i][0] == " "){
-                       //Guardar el usuario creado
-                       lista_usuarios[i][0] = emailadress;
-                       lista_usuarios[i][1] = contraseña;
-                       lista_usuarios[i][2] = name;
-                       lista_usuarios[i][3] = lastname;
-                       lista_usuarios[i][4] = user;
-                       //Sustituir los valores para seguir usando el ciclo del main
-                       name = " ";
-                       lastname = " ";
-                       emailadress = " ";
-                       contraseña = " ";
-                       user = " ";
-                   }
-               } 
+                //Guardar el usuario creado
+                email_list.add(emailadress);
+                password_list.add(contraseña);
+                name_list.add(name);
+                lastname_list.add(lastname);
+                user_list.add(user);
             }
         }
         return correo_correcto[0];  
     }
     
     public boolean iniciarSesion(String emailadress, String password){
-        boolean[] sesion = new boolean[2];
-        for(int l = 0; l<lista_usuarios.length;l++){
-            if(lista_usuarios[l][0].equals(emailadress) && lista_usuarios[l][1].equals(password)){
-                //Comprobar usuario administrador
-                if("YkdRyN#dTStB3jzULDmD@6Oqqw4wYp".equals(lista_usuarios[l][0]) && "447982761810495398113920963649".equals(lista_usuarios[l][1])){
-                    sesion[0] = true;
-                    sesion[1] = true;
-                    user = "ADMINISTRADOR";
-                    break;
-                }
-                //Usuario Estandar
-                else{
-                    sesion[0] = true;
-                    sesion[1] = false;
-                    user = lista_usuarios[l][4];
-                    break;
-                }
+        boolean[] sesion = new boolean[1];
+        int count = 0, count2 = 0;
+        for(String emailver:email_list){
+            if(emailver != emailadress){
+                count++;
             }
-            //Error al iniciar sesion
-            else if(lista_usuarios[l][0].equals(emailadress) || lista_usuarios[l][1].equals(password)){
-                sesion[0] = false;
+            if(emailver.equals(emailadress)){
+                for(String passwordver:password_list){
+                    if(passwordver.equals(password)){
+                        //Verificar administrador
+                        if(emailadress.equals("administrador4321@gmail.com") && password.equals("447982761810495398113920963649")){
+                            sesion[0] = true;
+                            user = "ADMINISTRADOR";
+                            break;
+                        }
+                        //Verificar cliente
+                        else if(emailver.equals(emailadress) && passwordver.equals(password)){
+                            sesion[0] = true;
+                            //Verificar el usuario del correo
+                            for(String userver:user_list){
+                                count2++;
+                                if (count2 == count){
+                                    user = userver;
+                                    break;
+                                }
+                            }
+                        }
+                        //Correo incorrecto
+                        else if(emailver.equals(emailadress) || passwordver.equals(password)){
+                            sesion[0] = false;
+                        }
+                        
+                    }
+                }
             }
         }
         return sesion[0];

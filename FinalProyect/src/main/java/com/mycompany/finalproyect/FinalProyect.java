@@ -17,13 +17,13 @@ public class FinalProyect {
         Cinema cinema = new Cinema();
         Scanner menu = new Scanner(System.in);
         Scanner datos = new Scanner(System.in);
-        boolean programa = true, sesion = false;
+        boolean programa = true, sesion;
         int elegir_opcion;
         //crear un usuario vacio
         User usuario = new User(" "," "," "," "," ");
+        //Definir el OUTER para poder romper el ciclo de todo el programa, esta definido en el switch "case 3"
         OUTER:
         while (programa) {
-            //if (" ".equals(usuario.getUser()) && " ".equals(usuario.getEmailadress())) {
                 System.out.println("\n***********************************"
                         + "\n*****BIENVENIDO AL CINE CENTER*****"
                         + "\n***********************************"
@@ -45,8 +45,7 @@ public class FinalProyect {
                             String contraseña = datos.nextLine();
                             sesion = usuario.iniciarSesion(emailadress, contraseña);
                             if(sesion == true){
-                                System.out.println("\nBienvenido " + usuario.getUser());
-                                if (usuario.getUser() == "ADMINISTRADOR"){
+                                if ("ADMINISTRADOR".equals(usuario.getUser())){
                                     var administrator = new Administrator(cinema);
                                     administrator.showAdministratorOptions();
                                 }
@@ -87,8 +86,9 @@ public class FinalProyect {
                         //Salir
                     case 3:
                         break OUTER;
-                        //Repetir ciclo
+                        //Romper ciclo Inicio/Registrarse
                     default:
+                        //Repetir ciclo
                         System.out.println("\nIngrese una opción valida");
                         break;
                 }
