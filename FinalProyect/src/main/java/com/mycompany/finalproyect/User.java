@@ -38,6 +38,13 @@ public class User {
         user_list.add("ADMINISTRADOR");
         name_list.add(" ");
         lastname_list.add(" ");
+
+        //usuario de prueba
+        email_list.add("user@test");
+        password_list.add("upt123"); 
+        user_list.add("USERTEST");
+        name_list.add("_");
+        lastname_list.add("_");
     }
 
     public String getEmailadress() {

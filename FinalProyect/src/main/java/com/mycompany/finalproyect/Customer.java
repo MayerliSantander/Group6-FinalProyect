@@ -39,6 +39,13 @@ public class Customer {
                     
                     break;
                 case 3:
+                    // System.out.println("\nIngrese el indice de la pelicula que quieres calificar");
+                    // cinema.billboard.showMoviesList();
+                    // Scanner scan = new Scanner(System.in);
+                    // int i = scan.nextInt();
+                    // Review review = new Review();
+                    // cinema.billboard.movies.get(i).addReview(review);
+                    // scan.close();
                     
                     break;
                 case 4:

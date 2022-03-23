@@ -12,6 +12,11 @@ import java.util.List;
 public class Billboard {
     List<Movie> movies = new ArrayList();
     
+    public Billboard(){
+        Movie movieTest = new Movie("test", "synopsis test", 777, "languages test", "genre test", "schedule test", "quality test");
+        movies.add(movieTest);
+    }
+    
     public void showBillboard(){
         System.out.println("La cartelera es:");
         for(Movie movie : movies ){
@@ -62,5 +67,12 @@ public class Billboard {
             quality[i] = movies.get(i).getQuality();
         }
         return synopsis;
+    }
+
+
+    public void showMoviesList(){
+        for(Movie movie : movies ){
+            movie.showTitleAndindex(movies.indexOf(movie));
+        }
     }
 }

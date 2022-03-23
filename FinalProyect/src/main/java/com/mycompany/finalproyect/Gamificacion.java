@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.finalproyect;;
+package com.mycompany.finalproyect;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -12,9 +12,15 @@ public final class Gamificacion {
     String dailygenre, challenge;
     Scanner sn = new Scanner(System.in);
     //Esto es solo de prueba
+<<<<<<< HEAD
     int dailyrew = 4;
     int dailytcks = 6;
     int dailyinfo = 8;
+=======
+    int dailyrew = 7;//Reviews.getDailyRewind();
+    int dailytcks = 7;//Tickets.getDailyTickets();
+    int dailyinfo = 7;//Cartelera.getDailyInfo();
+>>>>>>> 3e81d5a0298f478027e61c20235fbba1ceeb783b
     int points, count;
     boolean daily = true, week = true;
     Challenge reto1 = new Challenge("Hacer","reviews", 5, dailyrew,5);
