@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author fundacion
+ * @author Mayerli
  */
 public class Administrator {
     Cinema cinema;
