@@ -12,9 +12,9 @@ public final class Gamificacion {
     String dailygenre, challenge;
     Scanner sn = new Scanner(System.in);
     //Esto es solo de prueba
-    int dailyrew = Reviews.getDailyRewind();
-    int dailytcks = Tickets.getDailyTickets();
-    int dailyinfo = Cartelera.getDailyInfo();
+    int dailyrew = 4;
+    int dailytcks = 6;
+    int dailyinfo = 8;
     int points, count;
     boolean daily = true, week = true;
     Challenge reto1 = new Challenge("Hacer","reviews", 5, dailyrew,5);

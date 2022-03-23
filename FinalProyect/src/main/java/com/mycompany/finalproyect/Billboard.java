@@ -36,7 +36,31 @@ public class Billboard {
             }
         }
     }
-    public void updateMovie(String name){
+    public void updateWholeMovie(String name, Movie movie){
+        for(int i = 0; i<movies.size(); i++){
+            if(movies.get(i).getName().equalsIgnoreCase(name)){
+                movies.remove(i);
+            break;
+            }
+        }
+        movies.add(movie);
+    }
+    public String[] getMovieInformation(){
         
+        String[] synopsis = new String[movies.size()];
+        String[] duration = new String[movies.size()];
+        String[] languages = new String[movies.size()];
+        String[] genre = new String[movies.size()];
+        String[] schedule = new String[movies.size()];
+        String[] quality = new String[movies.size()];
+        for(int i = 0; i<movies.size(); i++){
+            synopsis[i] = movies.get(i).getSynopsis();
+            //duration[i] = movies.get(i).getDuration();
+            languages[i] = movies.get(i).getLanguages();
+            genre[i] = movies.get(i).getGenre();
+            schedule[i] = movies.get(i).getSchedule();
+            quality[i] = movies.get(i).getQuality();
+        }
+        return synopsis;
     }
 }
