@@ -44,4 +44,11 @@ public class Billboard {
     public void updateMovie(String name){
         
     }
+
+
+    public void showMoviesList(){
+        for(Movie movie : movies ){
+            movie.showTitleAndindex(movies.indexOf(movie));
+        }
+    }
 }

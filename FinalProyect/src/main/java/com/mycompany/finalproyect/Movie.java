@@ -4,6 +4,9 @@
  */
 package com.mycompany.finalproyect;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Mayerli
@@ -16,6 +19,7 @@ public class Movie {
     String genre;
     String schedule;
     String quality;
+    List<Review> reviews = new ArrayList<Review>();
     public Movie(String name, String synopsis, int duration, String languages, String genre, String schedule, String quality){
         this.name = name;
         this.synopsis = synopsis;
@@ -55,5 +59,14 @@ public class Movie {
         System.out.println("Género: " + getGenre());
         System.out.println("Horario: " + getSchedule());
         System.out.println("Calidad: " + getQuality());
+    }
+
+    //metodos para review
+    public void showTitleAndindex(int index){
+        System.out.println(index + ".- Titulo: " + getName());
+    }
+
+    public void addReview(Review review) {
+        reviews.add(review);
     }
 }

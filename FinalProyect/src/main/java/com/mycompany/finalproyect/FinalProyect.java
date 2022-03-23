@@ -57,7 +57,8 @@ public class FinalProyect {
                             else{
                                 System.out.println("\nEl correo o la contraseña con incorrectas");
                             }
-                        }   break;
+                        }   
+                        break;
                         //Registrar usuario
                     case 2:
                         sesion = false;
