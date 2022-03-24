@@ -8,20 +8,18 @@ public class Review {
 
     public Review(){
         setReview();
+        setRanking();
     }
 
-    public void setReview(){
-        Scanner scan = new Scanner(System.in);
+    private void setReview(){
+        Scanner scan1 = new Scanner(System.in);
         System.out.println("Ingrese su comentario:");
-        this.comment = scan.nextLine();
-        setRanking();
-        scan.close();
+        this.comment = scan1.nextLine();
     }
-    public void setRanking() {
+    private void setRanking() {
             System.out.println("Ingrese su calificacion del 1 al 5");
-            Scanner scan = new Scanner(System.in);
-            this.ranking = scan.nextInt();
-            scan.close();
+            Scanner scan2 = new Scanner(System.in);
+            this.ranking = scan2.nextInt();
     }
 
     public String getComment(){
