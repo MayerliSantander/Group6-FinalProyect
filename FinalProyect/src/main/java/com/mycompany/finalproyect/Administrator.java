@@ -40,7 +40,7 @@ public class Administrator {
                     System.out.println("**************************\n* Ingrese su sinopsis: *\n**************************");
                     String synopsis = datos.nextLine();
                     System.out.println("**************************\n* Ingrese su duracion en minutos: *\n**************************");
-                    int duration = datos.nextInt();
+                    int duration = menu.nextInt();
                     System.out.println("**************************\n* Ingrese su lenguaje: *\n**************************");
                     String language = datos.nextLine();
                     System.out.println("**************************\n* Ingrese su género: *\n**************************");
@@ -72,7 +72,7 @@ public class Administrator {
                     for(int i = 0; i<namesMovies.length; i++){
                         System.out.println((i + 1) + ". " + namesMovies[i]);
                     }
-                    int movieToUpdate = datos.nextInt();
+                    int movieToUpdate = menu.nextInt();
                     if(movieToUpdate>namesMovies.length || movieToUpdate<=0){
                         System.out.println("Numero no esta en la lista");
                     } else{
@@ -81,7 +81,7 @@ public class Administrator {
                         System.out.println("**************************\n* Ingrese su sinopsis: *\n**************************");
                         String synopsisMovie = datos.nextLine();
                         System.out.println("**************************\n* Ingrese su duracion en minutos: *\n**************************");
-                        int durationMovie = datos.nextInt();
+                        int durationMovie = menu.nextInt();
                         System.out.println("**************************\n* Ingrese su lenguaje: *\n**************************");
                         String languageMovie = datos.nextLine();
                         System.out.println("**************************\n* Ingrese su género: *\n**************************");

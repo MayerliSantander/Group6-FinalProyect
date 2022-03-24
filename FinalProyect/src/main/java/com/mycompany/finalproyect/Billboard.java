@@ -12,10 +12,10 @@ import java.util.List;
 public class Billboard {
     List<Movie> movies = new ArrayList();
     
-    public Billboard(){
-        Movie movieTest = new Movie("test", "synopsis test", 777, "languages test", "genre test", "schedule test", "quality test");
-        movies.add(movieTest);
-    }
+    //public Billboard(){
+      //  Movie movieTest = new Movie("test", "synopsis test", 777, "languages test", "genre test", "schedule test", "quality test");
+      //  movies.add(movieTest);
+    //}
     
     public void showBillboard(){
         System.out.println("La cartelera es:");
@@ -51,22 +51,25 @@ public class Billboard {
         movies.add(movie);
     }
     public String[] getMovieInformation(){
-        
-        String[] synopsis = new String[movies.size()];
-        String[] duration = new String[movies.size()];
-        String[] languages = new String[movies.size()];
-        String[] genre = new String[movies.size()];
-        String[] schedule = new String[movies.size()];
-        String[] quality = new String[movies.size()];
-        for(int i = 0; i<movies.size(); i++){
-            synopsis[i] = movies.get(i).getSynopsis();
-            //duration[i] = movies.get(i).getDuration();
-            languages[i] = movies.get(i).getLanguages();
-            genre[i] = movies.get(i).getGenre();
-            schedule[i] = movies.get(i).getSchedule();
-            quality[i] = movies.get(i).getQuality();
+        for(Movie info : movies){
+            String[] synopsis = new String[movies.size()];
+            int[] duration = new int[movies.size()];
+            String[] languages = new String[movies.size()];
+            String[] genre = new String[movies.size()];
+            String[] schedule = new String[movies.size()];
+            String[] quality = new String[movies.size()];
+            synopsis[0] = info.getSynopsis();
+            duration[0] = info.getDuration();
         }
-        return synopsis;
+        for(int i = 0; i<movies.size(); i++){
+            //synopsis[i] = movies.get(i).getSynopsis();
+            //duration[i] = movies.get(i).getDuration();
+            //languages[i] = movies.get(i).getLanguages();
+            //genre[i] = movies.get(i).getGenre();
+            //schedule[i] = movies.get(i).getSchedule();
+            //quality[i] = movies.get(i).getQuality();
+        }
+        return null;
     }
 
 

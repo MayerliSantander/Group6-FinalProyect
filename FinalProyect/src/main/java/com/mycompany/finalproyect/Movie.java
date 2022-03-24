@@ -59,6 +59,7 @@ public class Movie {
         System.out.println("Género: " + getGenre());
         System.out.println("Horario: " + getSchedule());
         System.out.println("Calidad: " + getQuality());
+        System.out.println("\n");
     }
 
     //metodos para review
