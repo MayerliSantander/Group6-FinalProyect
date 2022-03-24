@@ -69,4 +69,15 @@ public class Movie {
     public void addReview(Review review) {
         reviews.add(review);
     }
+    public void showReviews(){
+        for(Review review : reviews ){
+            System.out.println("_____________________");
+            System.out.print("|-");
+            for(int i = 0; i < review.getRanking(); i++){
+                System.out.print("-$");
+            }
+            System.out.println("\n|--" + review.getRanking() + "/5");
+            System.out.println("|--" + review.getComment());
+        }
+    }
 }

@@ -6,6 +6,8 @@ package com.mycompany.finalproyect;
 
 import java.util.Scanner;
 
+import javax.xml.validation.Validator;
+
 /**
  *
  * @author fundacion
@@ -25,9 +27,10 @@ public class Customer {
                     + "\n*****BIENVENIDO CLIENTE*****"
                     + "\n***********************************"
                     + "\n* 1. Mostrar Cartelera               *"
-                    + "\n* 2. Reservar Entradas            *"
-                    + "\n* 3. Calificar y Comentar una Pelicula            *"
-                    + "\n* 4. Salir                        *"
+                    + "\n* 2. Ver reseñas                        *"
+                    + "\n* 3. Reservar Entradas            *"
+                    + "\n* 4. Calificar y Comentar una Pelicula            *"
+                    + "\n* 5. Salir                        *"
                     + "\n***********************************");
             //Moverse por el Menu
             chosenOption = menu.nextInt();
@@ -36,12 +39,15 @@ public class Customer {
                     cinema.billboard.showBillboard();
                     break;
                 case 2:
-                    
+                    viewReviews();
                     break;
                 case 3:
-                    reviewMenu();
+                        
                     break;
                 case 4:
+                    reviewMenu();
+                    break;
+                case 5:
                     salir = true;
                     break;
                 default:
@@ -52,11 +58,31 @@ public class Customer {
     }
 
     private void reviewMenu(){
-        System.out.println("\nIngrese el indice de la pelicula que quieres calificar");
-        cinema.billboard.showMoviesList();
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
+        int i = setIndexMovie();
         Review review = new Review();
         cinema.billboard.movies.get(i).addReview(review);
+    }
+
+    private void viewReviews() {
+        int i = setIndexMovie();
+        cinema.billboard.movies.get(i).showReviews();
+    }
+
+    private int setIndexMovie() {
+        System.out.println("\nIngrese el indice de la pelicula que quieres calificar");
+        cinema.billboard.showMoviesList();
+        int i= 0;
+        boolean valid = false;
+        while(!valid){
+            Scanner scan = new Scanner(System.in); 
+            i = scan.nextInt();
+            if(i <= 0 || i > cinema.billboard.movies.size()){
+                valid = false;
+                System.out.println("valor fuera del limite, vuelva a intentarlo");
+            }else{
+                valid = true;
+            }
+        }
+        return i-1;
     }
 }

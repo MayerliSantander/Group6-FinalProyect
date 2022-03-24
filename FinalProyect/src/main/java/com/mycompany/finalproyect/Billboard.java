@@ -72,7 +72,7 @@ public class Billboard {
 
     public void showMoviesList(){
         for(Movie movie : movies ){
-            movie.showTitleAndindex(movies.indexOf(movie));
+            movie.showTitleAndindex(movies.indexOf(movie)+1);
         }
     }
 }
