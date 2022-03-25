@@ -36,20 +36,43 @@ public class Movie {
     public String getSynopsis(){
         return synopsis;
     }
+    public void setSynopsis(String synopsis){
+        this.synopsis = synopsis;
+    }
     public int getDuration(){
         return duration;
+    }
+    public void setDuration(int duration){
+        this.duration = duration;
     }
     public String getLanguages(){
         return languages;
     }
+    public void setLanguages(String languages){
+        this.languages = languages;
+    }
     public String getGenre(){
         return genre;
+    }
+    public void setGenre(String genre){
+        this.genre = genre;
     }
     public String getSchedule(){
         return schedule;
     }
+    public void setSchedule(String schedule){
+        this.schedule = schedule;
+    }
     public String getQuality(){
         return quality;
+    }
+    public void setQuality(String quality){
+        this.quality = quality;
+    }
+    public void showSumary(){
+        System.out.println("Titulo: " + getName());
+        System.out.println("Sinopsis: " + getSynopsis());
+        System.out.println("\n");
     }
     public void show(){
         System.out.println("Titulo: " + getName());

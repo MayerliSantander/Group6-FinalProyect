@@ -103,37 +103,60 @@ public class Administrator {
                         System.out.println((i + 1) + ". " + namesMoviesToUpdate[i]);
                     }
                     int moviesToUpdate = datos.nextInt();
+                    var movieToBeUpdated = cinema.billboard.getMovie(namesMoviesToUpdate[moviesToUpdate-1]);
                     if(moviesToUpdate>namesMoviesToUpdate.length || moviesToUpdate<=0){
                         System.out.println("Numero no esta en la lista");
                     } else{
+                        Scanner numInput = new Scanner(System.in);
+                        Scanner textInput = new Scanner(System.in);
                         System.out.println("\n**********************************\n* Elija la información que se actualizara: *\n**********************************");
-                        var movieInformationToUpdate = cinema.billboard.getMovieInformation();
-                        for(int i = 0; i<movieInformationToUpdate.length; i++){
-                            System.out.println((i + 1) + ". " + movieInformationToUpdate[i]);
+                        int chosenOpt;
+                        System.out.println("\n***********************************"
+                        + "\n*****BIENVENIDO ADMINISTRADOR*****"
+                        + "\n***********************************"
+                        + "\n* 1. Sinopsis                     *"
+                        + "\n* 2. Duración                     *"
+                        + "\n* 3. Lenguaje                     *"
+                        + "\n* 4. Género                       *"
+                        + "\n* 5. Horario                      *"
+                        + "\n* 6. Calidad                      *"
+                        + "\n***********************************");
+                        chosenOpt = numInput.nextInt();
+                        switch (chosenOpt) {
+                            case 1:
+                                System.out.println("**************************\n* Ingrese su sinopsis: *\n**************************");
+                                String newSynopsis = textInput.nextLine();
+                                movieToBeUpdated.setSynopsis(newSynopsis);
+                                break;
+                            case 2:
+                                System.out.println("**************************\n* Ingrese su duracion en minutos: *\n**************************");
+                                int newDuration = numInput.nextInt();
+                                movieToBeUpdated.setDuration(newDuration);
+                                break;
+                            case 3:
+                                System.out.println("**************************\n* Ingrese su lenguaje: *\n**************************");
+                                String newLanguage = textInput.nextLine();
+                                movieToBeUpdated.setLanguages(newLanguage);
+                                break;
+                            case 4:
+                                System.out.println("**************************\n* Ingrese su género: *\n**************************");
+                                String newGenre = textInput.nextLine();
+                                movieToBeUpdated.setGenre(newGenre);
+                                break;
+                            case 5:
+                                System.out.println("**************************\n* Ingrese el horario: *\n**************************");
+                                String newSchedule = textInput.nextLine();
+                                movieToBeUpdated.setSchedule(newSchedule);
+                                break;
+                            case 6:
+                                System.out.println("**************************\n* Ingrese la calidad: *\n**************************");
+                                String newQuality = textInput.nextLine();
+                                movieToBeUpdated.setQuality(newQuality);
+                                break;
+                            default:
+                                System.out.println("Opción invalida");
+                                break;
                         }
-                        int informationToUpdate = datos.nextInt();
-                        if(informationToUpdate>movieInformationToUpdate.length || informationToUpdate<=0){
-                            System.out.println("Numero no esta en la lista");
-                        }
-                        
-                        //System.out.println("\n**********************************\n* Ingrese nombre de la Pelicula por la que se actualizara: *\n**********************************");
-                        //String nameMovie = datos.nextLine();
-                        //System.out.println("**************************\n* Ingrese su sinopsis: *\n**************************");
-                        //String synopsisMovie = datos.nextLine();
-                        //System.out.println("**************************\n* Ingrese su duracion en minutos: *\n**************************");
-                        //int durationMovie = datos.nextInt();
-                        //System.out.println("**************************\n* Ingrese su lenguaje: *\n**************************");
-                        //String languageMovie = datos.nextLine();
-                        //System.out.println("**************************\n* Ingrese su género: *\n**************************");
-                        //String genreMovie = datos.nextLine();
-                        //System.out.println("**************************\n* Ingrese el horario: *\n**************************");
-                        //String scheduleMovie = datos.nextLine();
-                        //System.out.println("**************************\n* Ingrese la calidad: *\n**************************");
-                        //String qualityMovie = datos.nextLine();
-                        //var movieUpdate = new Movie(nameMovie, synopsisMovie, durationMovie, languageMovie, genreMovie, scheduleMovie, qualityMovie);
-                        
-                        //cinema.billboard.updateWholeMovie(namesMovies[movieToUpdate-1],movieUpdate);
-                        //System.out.println("Se ha actualizado toda la Pelicula "+ namesMovies[movieToUpdate-1]);
                     }
                     break;
                 case 5:

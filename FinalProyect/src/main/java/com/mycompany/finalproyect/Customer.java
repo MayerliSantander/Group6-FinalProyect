@@ -36,7 +36,8 @@ public class Customer {
             chosenOption = menu.nextInt();
             switch (chosenOption) {
                 case 1:
-                    cinema.billboard.showBillboard();
+                    cinema.billboard.showSumaryBillboard();
+                    
                     break;
                 case 2:
                     viewReviews();
