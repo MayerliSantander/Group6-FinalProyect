@@ -24,7 +24,7 @@ public class User {
     private ArrayList<String> user_list = new ArrayList<>();
     private ArrayList<String> name_list = new ArrayList<>();
     private ArrayList<String> lastname_list = new ArrayList<>();
-    private final boolean[] correo_correcto = new boolean[1];
+    private final boolean[] correo_correcto = new boolean[2];
 
     public User(String name, String lastname, String user, String emailadress, String contraseña) {
         this.name = name;
@@ -77,7 +77,8 @@ public class User {
             //Crear una instancia matcher(verdadero/falso) para comprobar el correo   
             Matcher matcher = pattern.matcher(email1);
             correo_correcto[0] = matcher.matches();
-            if (correo_correcto[0] == true){
+            correo_correcto[1] = usuarioExistente(emailadress);
+            if (correo_correcto[0] == true && correo_correcto[1] == false){
                 //Guardar el usuario creado
                 email_list.add(emailadress);
                 password_list.add(contraseña);
@@ -85,8 +86,23 @@ public class User {
                 lastname_list.add(lastname);
                 user_list.add(user);
             }
+            else{
+                correo_correcto[0] = false;
+            }
         }
         return correo_correcto[0];  
+    }
+    public boolean usuarioExistente(String email_creado){
+        boolean emailver = false;
+        for(String verificar:email_list){
+            if(verificar.contains(email_creado)){
+                emailver = true;
+            }
+            else{
+                emailver = false;
+            }
+        }
+        return emailver;
     }
     
     public boolean iniciarSesion(String emailadress, String password){
