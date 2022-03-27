@@ -23,6 +23,18 @@ public class Billboard {
             movie.show();
         }
     }
+    public Movie showMovie(Movie name){
+        System.out.println("Info: ");
+        Movie [] movieToShow = new Movie[1];
+        for(int i = 0; i<movies.size(); i++){
+            if(movies.get(i).getName()==(name.toString())){
+                movieToShow[0] = movies.get(i);
+               System.out.println(movieToShow[0]);
+                return movieToShow[0];
+            }
+        }
+        return null;
+    }
     public void showSumaryBillboard(){
         System.out.println("La cartelera es:");
         for(Movie movie : movies ){
