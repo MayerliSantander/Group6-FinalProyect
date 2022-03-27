@@ -14,8 +14,10 @@ import javax.xml.validation.Validator;
  */
 public class Customer {
     Cinema cinema;
-    public Customer(Cinema cinema){
+    User usuario;
+    public Customer(Cinema cinema, User usuario){
         this.cinema = cinema;
+        this.usuario = usuario;
     }
     public void showCustomerOptions(){
         int chosenOption;
@@ -93,18 +95,23 @@ public class Customer {
     }
 
     private void reviewMenu(){
-        int i = setIndexMovie();
-        Review review = new Review();
+        int i = setIndexMovie(2);
+        Review review = new Review(usuario);
         cinema.billboard.movies.get(i).addReview(review);
     }
 
     private void viewReviews() {
-        int i = setIndexMovie();
-        cinema.billboard.movies.get(i).showReviews();
+        int i = setIndexMovie(1);
+        cinema.billboard.movies.get(i).showReviews(usuario);
     }
 
-    private int setIndexMovie() {
-        System.out.println("\nIngrese el indice de la pelicula que quieres calificar");
+    private int setIndexMovie(int in) {
+        if (in==1){
+            System.out.println("\nMostrar reseña de pelicula: ");
+        }
+        if (in==2){
+            System.out.println("\nIngrese el indice de la pelicula a calificar");
+        }
         cinema.billboard.showMoviesList();
         int i= 0;
         boolean valid = false;

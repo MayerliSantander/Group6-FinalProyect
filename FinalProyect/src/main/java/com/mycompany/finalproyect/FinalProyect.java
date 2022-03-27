@@ -50,7 +50,7 @@ public class FinalProyect {
                                     administrator.showAdministratorOptions();
                                 }
                                 else{
-                                    var customer = new Customer(cinema);
+                                    var customer = new Customer(cinema, usuario);
                                     customer.showCustomerOptions();
                                 }
                             }

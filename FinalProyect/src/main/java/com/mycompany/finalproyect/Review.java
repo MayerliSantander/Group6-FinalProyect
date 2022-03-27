@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class Review {
     private String comment;
+    private String username;
     private int ranking;
 
-    public Review(){
+    public Review(User usuario){
+        this.username = usuario.getUser();
         setReview();
         setRanking();
     }
@@ -37,6 +39,10 @@ public class Review {
 
     public int getRanking(){
         return ranking;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
 }

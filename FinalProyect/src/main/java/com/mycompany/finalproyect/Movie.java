@@ -93,15 +93,13 @@ public class Movie {
     public void addReview(Review review) {
         reviews.add(review);
     }
-    public void showReviews(){
+    public void showReviews(User usuario){
         for(Review review : reviews ){
             System.out.println("_____________________");
-            System.out.print("|-");
-            for(int i = 0; i < review.getRanking(); i++){
-                System.out.print("-$");
-            }
-            System.out.println("\n|--" + review.getRanking() + "/5");
-            System.out.println("|--" + review.getComment());
+            System.out.print("|");
+            System.out.print(review.getUsername());
+            System.out.println("\n|Calificación: " + review.getRanking() + "/5");
+            System.out.println("|Comentario: " + review.getComment());
         }
     }
 }
