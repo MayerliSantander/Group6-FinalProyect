@@ -65,13 +65,14 @@ public class Gamificacion{
                     break;
             }
         }
+        z=false;
     }
     public static void getPoints(int pts){
         Gamificacion.points = pts;
     }
     public static void setChall(){
         Challenge[] chall = challtotal;
-        Challenge[] chall2 = {chall[0],challtotal[1],challtotal[3]};
+        Challenge[] chall2 = {chall[0],challtotal[1],challtotal[2]};
         Challenge[] chall3 = {chall[3],challtotal[4],challtotal[5]};
         challdaily = chall2;
         challweek = chall3;

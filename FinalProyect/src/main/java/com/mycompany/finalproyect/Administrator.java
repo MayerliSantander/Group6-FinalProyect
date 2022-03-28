@@ -58,7 +58,7 @@ public class Administrator {
                     for(int i = 0; i<names.length; i++){
                         System.out.println((i + 1) + ". " + names[i]);
                     }
-                    int chosenMovie = datos.nextInt();
+                    int chosenMovie = menu.nextInt();
                     if(chosenMovie>names.length || chosenMovie<=0){
                         System.out.println("Numero no esta en la lista");
                     } else{
