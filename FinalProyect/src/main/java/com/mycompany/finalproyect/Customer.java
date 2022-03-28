@@ -82,7 +82,9 @@ public class Customer {
                     break;
                 case 3:
 
-                        
+                    menu men = new menu(cinema);
+                    men.elmenu();
+
                     break;
                 case 4:
                     reviewMenu();
@@ -98,7 +100,8 @@ public class Customer {
                     break;
             }
         }
-    }
+        }
+
 
     private void reviewMenu(){
         int i = setIndexMovie(2);
@@ -122,7 +125,7 @@ public class Customer {
         int i= 0;
         boolean valid = false;
         while(!valid){
-            Scanner scan = new Scanner(System.in); 
+            Scanner scan = new Scanner(System.in);
             i = scan.nextInt();
             if(i <= 0 || i > cinema.billboard.movies.size()){
                 valid = false;

@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Mayerli
  */
-public class Movie {
+ class Movie {
     String name;
     String synopsis;
     int duration;
@@ -21,7 +21,8 @@ public class Movie {
     String quality;
     boolean info = false;
     List<Review> reviews = new ArrayList<Review>();
-    public Movie(String name, String synopsis, int duration, String languages, String genre, String schedule, String quality){
+
+    public Movie(String name, String synopsis, int duration, String languages, String genre, String schedule, String quality) {
         this.name = name;
         this.synopsis = synopsis;
         this.duration = duration;
@@ -30,52 +31,66 @@ public class Movie {
         this.schedule = schedule;
         this.quality = quality;
     }
-    
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public String getSynopsis(){
+
+    public String getSynopsis() {
         return synopsis;
     }
-    public void setSynopsis(String synopsis){
+
+    public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
     }
-    public int getDuration(){
+
+    public int getDuration() {
         return duration;
     }
-    public void setDuration(int duration){
+
+    public void setDuration(int duration) {
         this.duration = duration;
     }
-    public String getLanguages(){
+
+    public String getLanguages() {
         return languages;
     }
-    public void setLanguages(String languages){
+
+    public void setLanguages(String languages) {
         this.languages = languages;
     }
-    public String getGenre(){
+
+    public String getGenre() {
         return genre;
     }
-    public void setGenre(String genre){
+
+    public void setGenre(String genre) {
         this.genre = genre;
     }
-    public String getSchedule(){
+
+    public String getSchedule() {
         return schedule;
     }
-    public void setSchedule(String schedule){
+
+    public void setSchedule(String schedule) {
         this.schedule = schedule;
     }
-    public String getQuality(){
+
+    public String getQuality() {
         return quality;
     }
-    public void setQuality(String quality){
+
+    public void setQuality(String quality) {
         this.quality = quality;
     }
-    public void showSumary(){
+
+    public void showSumary() {
         System.out.println("Titulo: " + getName());
         System.out.println("Sinopsis: " + getSynopsis());
         System.out.println("\n");
     }
-    public void show(){
+
+    public void show() {
         System.out.println("****************************************************\n* -Titulo: " + getName());
         System.out.println("* -Sinopsis: " + getSynopsis());
         System.out.println("* -Duracion: " + getDuration() +" min.");
@@ -84,7 +99,7 @@ public class Movie {
         System.out.println("* -Horario: " + getSchedule());
         System.out.println("* -Calidad: " + getQuality() +"\n****************************************************");
         System.out.println("\n");
-        if(info == false){
+        if (info == false) {
             User.dailyinfos++;
             User.infos++;
             info = true;
@@ -92,15 +107,16 @@ public class Movie {
     }
 
     //metodos para review
-    public void showTitleAndindex(int index){
+    public void showTitleAndindex(int index) {
         System.out.println(index + ".- Titulo: " + getName());
     }
 
     public void addReview(Review review) {
         reviews.add(review);
     }
-    public void showReviews(User usuario){
-        for(Review review : reviews ){
+
+    public void showReviews(User usuario) {
+        for (Review review : reviews) {
             System.out.println("_____________________");
             System.out.print("|");
             System.out.print(review.getUsername());
@@ -108,4 +124,6 @@ public class Movie {
             System.out.println("|Comentario: " + review.getComment());
         }
     }
-}
+
+
+    }
