@@ -10,6 +10,7 @@ public class Challenge {
     boolean complete, claim;
     int target, weekcount, current, type, points;
     String goal, action;
+    boolean modify = false;
     public Challenge(String action, String goal, int target,int type, int points){
         this.action = action;
         this.goal = goal;

@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Trophies{
     static Scanner sn = new Scanner(System.in);
+    static Scanner sn1 = new Scanner(System.in);
     boolean complete, claim;
     boolean modify = false;
     int target, current, type, points;
@@ -22,39 +23,53 @@ public class Trophies{
     }
     public static void CompleteTrophies(Trophies[] trophies, int points){
         for(Trophies trophies1: trophies){
-            if(trophies1.target <= trophies1.current){
-                trophies1.complete = true;
-            }
-            if (trophies1.claim == false && trophies1.complete == true && trophies != null){
-                trophies1.claim = true;
-                points = points+trophies1.points;
+            if(trophies1 != null){
+                if(trophies1.target <= trophies1.current){
+                    trophies1.complete = true;
+                }
+                if (trophies1.claim == false && trophies1.complete == true){
+                    trophies1.claim = true;
+                    points = points+trophies1.points;
+                }
             }
         }
         Gamificacion.getPoints(points);
     }
     public static void addTrophies(){
         Trophies[] trophies = Default.trophie;
-        int target = sn.nextInt();
+        System.out.println("Designa la accion:");
         String action = sn.nextLine();
+        System.out.println("Designa el requisito:");
+        int target = sn.nextInt();
+        System.out.println("Designa los puntos:");
         int pnts = sn.nextInt();
-        System.out.println("1. Hacer reviews");
-        System.out.println("2. Reservar entradas");
-        System.out.println("3. Leer infos");
-        int type = sn.nextInt();
-        switch(type){
-            case 1:
-                trophies[getLength(trophies)] = new Trophies(action, target, 1,pnts);
-                break;
-            case 2:
-                trophies[getLength(trophies)] = new Trophies(action, target, 2,pnts);
-                break;
-            case 3:
-                trophies[getLength(trophies)] = new Trophies(action, target, 3,pnts);
-                break;
-            default:
-                System.out.println("Elige un tipo");
-                break;
+        boolean x = false;
+        while(!x){
+            System.out.println("Elige el tipo:");
+            System.out.println("1. Hacer reviews");
+            System.out.println("2. Reservar entradas");
+            System.out.println("3. Leer infos");
+            int type = sn1.nextInt();
+            switch(type){
+                case 1:
+                    trophies[getLength(trophies)] = new Trophies(action, target, 1,pnts);
+                    x = true;
+                    break;
+                case 2:
+                    trophies[getLength(trophies)] = new Trophies(action, target, 2,pnts);
+                    x = true;
+                    break;
+                case 3:
+                    trophies[getLength(trophies)] = new Trophies(action, target, 3,pnts);
+                    x = true;
+                    break;
+                default:
+                    System.out.println("Elige un tipo");
+                    break;
+            }
         }
+        Default.trophie = trophies;
+        x = false;
     }
     public static void showTrophies(Trophies[] trophies){
         boolean x = false;
@@ -80,6 +95,7 @@ public class Trophies{
                 System.out.println("Selecione una opcion"); 
             }
         }
+        x= false;
     }
     public static int getLength(Trophies[] trophies1){
         int count = 0;
