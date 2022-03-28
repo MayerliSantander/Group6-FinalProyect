@@ -123,9 +123,9 @@ public class Gamificacion{
             System.out.println("*3. Modificar Premios:          *");
             System.out.println("*4. Incluir Trofeos             *");
             System.out.println("*5. Incluir Premios             *");
-            System.out.println("*7. Reiniciar los premios       *");
-            System.out.println("*8. Cambio diario               *");
-            System.out.println("*9. Cambio semanal              *");
+            System.out.println("*6. Reiniciar los premios       *");
+            System.out.println("*7. Cambio diario               *");
+            System.out.println("*8. Cambio semanal              *");
             System.out.println("*9. Volver                      *");
             System.out.println("*********************************");
             int opcion = sn.nextInt();
@@ -283,7 +283,7 @@ public class Gamificacion{
             trop[index].target = sn.nextInt();
             System.out.println("Modificar puntos:");
             trop[index].points = sn.nextInt();
-            System.out.println("Resultado de la modificacion :");
+            System.out.println("Resultado de la modificacion:");
             System.out.println("***********************************************************************************************");
             System.out.println(trop[index].action+" : [progreso]/" + trop[index].target+ " [Puntos : "+trop[index].points+"]");
             System.out.println("***********************************************************************************************");

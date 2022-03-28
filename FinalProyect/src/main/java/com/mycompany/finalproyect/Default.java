@@ -70,7 +70,7 @@ public class Default {
         trophies1[6] = new Trophies("Hacer 70 reviews", 20, 1, 10);
         trophies1[7] = new Trophies("Hacer 80 reviews", 20, 1, 10);
         trophies1[8] = new Trophies("Hacer 90 reviews", 20, 1, 10);
-        trophies1[9] = new Trophies("Hacer 100 rese?as", 20, 1, 20);
+        trophies1[9] = new Trophies("Hacer 100 reseñas", 20, 1, 20);
         trophies1[10] = new Trophies("Reservar 10 entradas", 10, 2, 5);
         trophies1[11] = new Trophies("Reservar 20 entradas", 20, 2, 5);
         trophies1[12] = new Trophies("Reservar 30 entradas", 20, 2, 5);
@@ -97,13 +97,13 @@ public class Default {
         Awards[] awards1 = new Awards[100];
         awards1[0] = new Awards("Refresco chico", 100);
         awards1[1] = new Awards("Palomitas de maiz chico", 200);
-        awards1[3] = new Awards("Palomitas de mariz acarameladas chico", 200);
+        awards1[3] = new Awards("Palomitas de maiz acarameladas chico", 200);
         awards1[4] = new Awards("Refresco mediano", 300);
         awards1[5] = new Awards("Palomitas de maiz mediano", 300);
-        awards1[6] = new Awards("Palomitas de mariz acarameladas mediano", 300);
+        awards1[6] = new Awards("Palomitas de maiz acarameladas mediano", 300);
         awards1[7] = new Awards("Refresco grande", 400);
         awards1[8] = new Awards("Palomitas de maiz grande", 400);
-        awards1[9] = new Awards("Palomitas de mariz acarameladas grande", 400);
+        awards1[9] = new Awards("Palomitas de maiz acarameladas grande", 400);
         awards1[10] = new Awards("Entrada gratis", 2000);
         awards1[11] = new Awards("Entrada gratis a pelicula 3D", 2100);
         return awards1;
