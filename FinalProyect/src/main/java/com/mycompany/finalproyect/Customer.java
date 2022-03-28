@@ -32,7 +32,7 @@ public class Customer {
                     + "\n* 1. Mostrar Cartelera                  *"
                     + "\n* 2. Ver reseñas                        *"
                     + "\n* 3. Reservar Entradas                  *"
-                    + "\n* 4. Calificar y Comentar una Pelicula  *
+                    + "\n* 4. Calificar y Comentar una Pelicula  *"
                     + "\n* 5. Retos, trofeos y canjeo de premios *"
                     + "\n* 6. Salir                              *"
                     + "\n*****************************************");
