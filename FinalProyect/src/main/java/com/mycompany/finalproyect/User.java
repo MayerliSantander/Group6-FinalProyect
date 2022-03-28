@@ -32,6 +32,7 @@ public class User {
     public static int entradas = 0;
     public static int infos = 0;
     public static int reviews = 0;
+    public static int points = 0;
     public static boolean newuser = true;
     public static Awards[] awrds;
     public static Challenge[] chllg;
