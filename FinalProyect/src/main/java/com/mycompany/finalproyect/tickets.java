@@ -28,7 +28,7 @@ public class tickets {
                 User.dailyentradas = User.dailyentradas + NticketsG;
                 this.ntickets = this.NticketsG+this.ntickets;
             }
-            else if(op1 == 2){
+            if(op1 == 2){
                 System.out.println("Gracias por la compra");
                 break;
             }

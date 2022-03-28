@@ -30,8 +30,11 @@ public class menu {
                     int chosenMovie = reader.nextInt();
                     if (chosenMovie > cinema.billboard.movies.size() || chosenMovie <= 0) {
                         System.out.println("Numero no esta en la lista");
-                        tickets.menu();
+
+
                     }
+                    else tickets.menu();
+
                 }
                     if (op == 2) {
                         System.out.println("Gracias por su compra");
