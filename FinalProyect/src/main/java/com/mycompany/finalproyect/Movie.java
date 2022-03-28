@@ -19,6 +19,7 @@ public class Movie {
     String genre;
     String schedule;
     String quality;
+    boolean info = false;
     List<Review> reviews = new ArrayList<Review>();
     public Movie(String name, String synopsis, int duration, String languages, String genre, String schedule, String quality){
         this.name = name;
@@ -83,6 +84,11 @@ public class Movie {
         System.out.println("Horario: " + getSchedule());
         System.out.println("Calidad: " + getQuality());
         System.out.println("\n");
+        if(info == false){
+            User.dailyinfos++;
+            User.infos++;
+            info = true;
+        }
     }
 
     //metodos para review
