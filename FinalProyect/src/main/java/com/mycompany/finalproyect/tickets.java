@@ -26,8 +26,7 @@ public class tickets {
                 this.do2 = this.do2 + this.money;
                 this.ntickets = this.NticketsG+this.ntickets;
             }
-            else
-            if(op1 == 2){
+            else if(op1 == 2){
                 System.out.println("Gracias por la compra");
                 break;
             }
