@@ -1,4 +1,5 @@
-﻿package com.mycompany.finalproyect;
+package com.mycompany.finalproyect;
+
 
 import java.util.Scanner;
 

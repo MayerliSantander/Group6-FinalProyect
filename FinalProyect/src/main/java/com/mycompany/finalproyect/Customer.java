@@ -81,7 +81,6 @@ public class Customer {
                     viewReviews();
                     break;
                 case 3:
-
                     menu men = new menu(cinema);
                     men.elmenu();
 
