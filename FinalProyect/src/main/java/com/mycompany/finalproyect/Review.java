@@ -17,6 +17,8 @@ public class Review {
         Scanner scan1 = new Scanner(System.in);
         System.out.println("Ingrese su comentario:");
         this.comment = scan1.nextLine();
+        User.dailyreviews++;
+        User.reviews++;
     }
     private void setRanking() {
         boolean valid = false;
