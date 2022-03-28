@@ -24,6 +24,8 @@ public class tickets {
                 this.money= this.NticketsG * 30;
                 System.out.println("Total a pagar es: "+money);
                 this.do2 = this.do2 + this.money;
+                User.entradas = User.entradas + NticketsG;
+                User.dailyentradas = User.dailyentradas + NticketsG;
                 this.ntickets = this.NticketsG+this.ntickets;
             }
             else if(op1 == 2){
