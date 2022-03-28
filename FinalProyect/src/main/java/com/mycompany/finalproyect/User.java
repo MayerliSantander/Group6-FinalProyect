@@ -25,6 +25,19 @@ public class User {
     private ArrayList<String> name_list = new ArrayList<>();
     private ArrayList<String> lastname_list = new ArrayList<>();
     private final boolean[] correo_correcto = new boolean[2];
+    
+    public static int dailyreviews = 0;
+    public static int dailyentradas = 0;
+    public static int dailyinfos = 0;
+    public static int entradas = 0;
+    public static int infos = 0;
+    public static int reviews = 0;
+    public static boolean newuser = true;
+    public static Awards[] awrds;
+    public static Challenge[] chllg;
+    public static Trophies[] thphs;
+    public static ArrayList<String> awardsobtenied = new ArrayList<>();
+    
 
     public User(String name, String lastname, String user, String emailadress, String contraseña) {
         this.name = name;
@@ -57,6 +70,17 @@ public class User {
         return user;
     }
     
+    public static int getReviews() {
+        return reviews;
+    }
+
+    public static int getEntradas() {
+        return entradas;
+    }
+
+    public static int getInfos() {
+        return infos;
+    }
 
     public boolean registrarUsuario(String name2, String lastname2, String user2, String emailadress2, String contraseña2){
         name = name2;
