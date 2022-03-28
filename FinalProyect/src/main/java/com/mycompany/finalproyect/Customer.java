@@ -26,16 +26,16 @@ public class Customer {
         Scanner datos = new Scanner(System.in);
         boolean salir = false;
         while(salir == false){
-            System.out.println("\n***********************************"
-                    + "\n************BIENVENIDO CLIENTE***********"
-                    + "\n*****************************************"
-                    + "\n* 1. Mostrar Cartelera                  *"
-                    + "\n* 2. Ver reseñas                        *"
-                    + "\n* 3. Reservar Entradas                  *"
-                    + "\n* 4. Calificar y Comentar una Pelicula  *"
-                    + "\n* 5. Retos, trofeos y canjeo de premios *"
-                    + "\n* 6. Salir                              *"
-                    + "\n*****************************************");
+            System.out.println("\n******************************************"
+                    + "\n************BIENVENIDO CLIENTE************"
+                    + "\n******************************************"
+                    + "\n* 1. Mostrar Cartelera                   *"
+                    + "\n* 2. Ver reseñas                         *"
+                    + "\n* 3. Reservar Entradas                   *"
+                    + "\n* 4. Calificar y Comentar una Pelicula   *"
+                    + "\n* 5. Retos, trofeos y canjeo de premios  *"
+                    + "\n* 6. Salir                               *"
+                    + "\n******************************************");
             //Moverse por el Menu
             chosenOption = menu.nextInt();
             switch (chosenOption) {
@@ -46,16 +46,16 @@ public class Customer {
                     Scanner textInput = new Scanner(System.in);
                     boolean out = false;
                     while(out == false){
-                        System.out.println("\n***********************************"
-                        + "\n************ELIGE UNA OPCION**************"
-                        + "\n******************************************"
-                        + "\n* 1. Mostrar Info Detallada de Pelicula  *"
-                        + "\n* 2. Salir                               *"
-                        + "\n******************************************");
+                        System.out.println("\n********************************************"
+                        + "\n**************ELIGE UNA OPCION**************"
+                        + "\n********************************************"
+                        + "\n* 1. Mostrar Info Detallada de Pelicula    *"
+                        + "\n* 2. Salir                                 *"
+                        + "\n********************************************");
                         chosenOpt = numInput.nextInt();
                         switch (chosenOpt) {
                             case 1:
-                                System.out.println("\n**********************************\n* Elige de que Pelicula ver la info completa: *\n**********************************");
+                                System.out.println("\n***********************************************\n* Elige de que Pelicula ver la info completa: *\n***********************************************");
                                 var names = cinema.billboard.getMovieNames();
                                 for(int i = 0; i<names.length; i++){
                                     System.out.println((i + 1) + ". " + names[i]);

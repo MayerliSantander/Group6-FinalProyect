@@ -76,13 +76,13 @@ public class Movie {
         System.out.println("\n");
     }
     public void show(){
-        System.out.println("Titulo: " + getName());
-        System.out.println("Sinopsis: " + getSynopsis());
-        System.out.println("Duracion: " + getDuration());
-        System.out.println("Lenguajes: " + getLanguages());
-        System.out.println("Género: " + getGenre());
-        System.out.println("Horario: " + getSchedule());
-        System.out.println("Calidad: " + getQuality());
+        System.out.println("****************************************************\n* -Titulo: " + getName());
+        System.out.println("* -Sinopsis: " + getSynopsis());
+        System.out.println("* -Duracion: " + getDuration() +" min.");
+        System.out.println("* -Lenguajes: " + getLanguages());
+        System.out.println("* -Género: " + getGenre());
+        System.out.println("* -Horario: " + getSchedule());
+        System.out.println("* -Calidad: " + getQuality() +"\n****************************************************");
         System.out.println("\n");
         if(info == false){
             User.dailyinfos++;
