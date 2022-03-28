@@ -31,8 +31,8 @@ public class FinalProyect {
                         + "\n* 2. Registrar Usuario            *"
                         + "\n* 3. Salir                        *"
                         + "\n***********************************");
-            Default.setDefault();
                 //Moverse por el Menu
+                Default.setDefault();
                 elegir_opcion = menu.nextInt();
                 switch (elegir_opcion) {
                     //Inicio de sesion
