@@ -31,6 +31,7 @@ public class FinalProyect {
                         + "\n* 2. Registrar Usuario            *"
                         + "\n* 3. Salir                        *"
                         + "\n***********************************");
+            Default.setDefault();
                 //Moverse por el Menu
                 elegir_opcion = menu.nextInt();
                 switch (elegir_opcion) {
@@ -51,6 +52,7 @@ public class FinalProyect {
                                 }
                                 else{
                                     var customer = new Customer(cinema, usuario);
+                                    Default.setUserDefault();
                                     customer.showCustomerOptions();
                                 }
                             }
