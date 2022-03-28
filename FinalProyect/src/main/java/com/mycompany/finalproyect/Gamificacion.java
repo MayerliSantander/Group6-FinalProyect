@@ -177,7 +177,7 @@ public class Gamificacion{
     }
     public static void modifyChallenge(){
         int challenge1 = sn.nextInt();
-        Challenge[] chall = challtotal;
+        Challenge[] chall = Default.challenge;
         if(challenge1 < 4 && challenge1 >= 0){
             System.out.println("***********************************************************************************************");
             System.out.println("Estructura del reto: [accion] [requisito] [objetivo]: [progreso]/[requisito]  [puntos:[puntos]]");

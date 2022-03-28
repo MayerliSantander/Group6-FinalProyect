@@ -29,7 +29,8 @@ public class Administrator {
                     + "\n* 3. Actualizar toda una Pelicula     *"
                     + "\n* 4. Actualizar parte de una Pelicula *"
                     + "\n* 5. Mostrar Cartelera                *"
-                    + "\n* 6. Salir                            *"
+                    + "\n* 6. Modificar Gamificacion           *"
+                    + "\n* 7. Salir                            *"
                     + "\n***********************************");
             //Moverse por el Menu
             chosenOption = menu.nextInt();
@@ -163,6 +164,9 @@ public class Administrator {
                     cinema.billboard.showBillboard();
                     break;
                 case 6:
+                    Gamificacion.modifyGamificacion();
+                    break;
+                case 7:
                     salir = true;
                     break;
                 default:
