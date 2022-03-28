@@ -20,6 +20,7 @@ public class Customer {
         this.usuario = usuario;
     }
     public void showCustomerOptions(){
+        Gamificacion gm = new Gamificacion();
         int chosenOption;
         Scanner menu = new Scanner(System.in);
         Scanner datos = new Scanner(System.in);
@@ -85,6 +86,9 @@ public class Customer {
                     reviewMenu();
                     break;
                 case 5:
+                    gm.showGamificacion();
+                    break;
+                case 6:
                     salir = true;
                     break;
                 default:
