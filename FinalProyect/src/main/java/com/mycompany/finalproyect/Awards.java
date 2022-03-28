@@ -8,8 +8,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Awards {
-    static int pts = Gamificacion.points; 
+    static int pts = User.points; 
     static Scanner sn = new Scanner(System.in);
+    static Scanner sn1 = new Scanner(System.in);
     String award;
     int cost;
     boolean exchange;
@@ -20,9 +21,12 @@ public class Awards {
             this.exchange = false;
         }
     public static void addAwards(){
+        System.out.println("Designe el premio:");
         String award2 = sn.nextLine();
-        int cost1 = sn.nextInt();
+        System.out.println("Designe el precio:");
+        int cost1 = sn1.nextInt();
         Default.award[getLength(Default.award)] = new Awards(award2,cost1);
+        System.out.println("Premio incluido");
     }
     public static int getLength(Awards[] awards1){
         int count = 0;
@@ -50,7 +54,7 @@ public class Awards {
                         System.out.println("*Ya reclamaste este premio*");
                         System.out.println("***************************");
                     }
-                    else if(awards.exchange == false && awards.cost <= Gamificacion.points){
+                    else if(awards.exchange == false && awards.cost <= User.points){
                         awards.exchange = true;
                         System.out.println("***********************************************");
                         System.out.println("Premio "+awards.award +" reclamado");
