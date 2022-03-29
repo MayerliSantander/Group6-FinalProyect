@@ -37,18 +37,27 @@ public class Trophies{
     }
     public static void addTrophies(){
         Trophies[] trophies = Default.trophie;
-        System.out.println("Designa la accion:");
+        System.out.println("************************************");
+        System.out.println("* Designa la accion:               *");
+        System.out.println("************************************");
         String action = sn.nextLine();
-        System.out.println("Designa el requisito:");
+        System.out.println("************************************");
+        System.out.println("* Designa el requisito:            *");
+        System.out.println("************************************");
         int target = sn.nextInt();
-        System.out.println("Designa los puntos:");
+        System.out.println("************************************");
+        System.out.println("* Designa los puntos:              *");
+        System.out.println("************************************");
         int pnts = sn.nextInt();
         boolean x = false;
         while(!x){
-            System.out.println("Elige el tipo:");
-            System.out.println("1. Hacer reviews");
-            System.out.println("2. Reservar entradas");
-            System.out.println("3. Leer infos");
+            System.out.println("************************************");
+            System.out.println("*********** Elige el tipo **********");
+            System.out.println("************************************");
+            System.out.println("* 1. Hacer reviews                 *");
+            System.out.println("* 2. Reservar entradas             *");
+            System.out.println("* 3. Leer infos                    *");
+            System.out.println("************************************");
             int type = sn1.nextInt();
             switch(type){
                 case 1:
@@ -74,6 +83,7 @@ public class Trophies{
     public static void showTrophies(Trophies[] trophies){
         boolean x = false;
         while(!x){
+            System.out.println("****************************************************************************");
             for(Trophies trop: trophies){
                 if(trop != null){
                     if(trop.complete != true){
@@ -84,9 +94,9 @@ public class Trophies{
                     }
                 }
             }
-            System.out.println("**********************************");
-            System.out.println("0. Volver");
-            System.out.println("**********************************");
+            System.out.println("****************************************************************************");
+            System.out.println("* 0. Volver                                                                *");
+            System.out.println("****************************************************************************");
             int op =sn.nextInt();
             if(op == 0){
                 x = true;

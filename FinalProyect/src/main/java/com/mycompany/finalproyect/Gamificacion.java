@@ -88,30 +88,38 @@ public class Gamificacion{
     }
     public void ShowChallenge(){
         System.out.println("***********************************************************");
-        System.out.println("Retos diarios:");
+        System.out.println("********************   RETOS DIARIOS   ********************");
         System.out.println("***********************************************************");
         Challenge.printChallenge(this.challdaily);
         System.out.println("***********************************************************");
-        System.out.println("Retos semanales:");
+        System.out.println("********************  RETOS SEMANALES  ********************");
         System.out.println("***********************************************************");
         Challenge.printChallenge(this.challweek);
         System.out.println("***********************************************************");
     }
     public static void modifyAwards(){
         int y = 0;
-        System.out.println("Elige el premio:");
+        System.out.println("***************************************");
+        System.out.println("*********** Elige el premio ***********");
+        System.out.println("***************************************");
         for(Awards aw: Default.award){
             if(aw != null){
                 System.out.println(y+". "+aw.award+": "+aw.cost+" puntos");
                 y++;
             }
         }
+        System.out.println("***************************************");
         int index = sn.nextInt();
+        System.out.println("***************************************");
         if (index < Awards.getLength(Default.award) && index >= 0){
-            System.out.println("Modifica el premio ganado:");
+            System.out.println("* Modifica el premio ganado:          *");
+            System.out.println("***************************************");
             String premio = sn2.nextLine();
-            System.out.println("Modifica el precio:");
+            System.out.println("***************************************");
+            System.out.println("* Modifica el precio:                 *");
+            System.out.println("***************************************");
             int price = sn1.nextInt();
+            System.out.println("***************************************");;
             Default.award[index].award = premio;
             Default.award[index].cost = price;
             Default.award[index].modify = true;
@@ -136,16 +144,16 @@ public class Gamificacion{
     public static void modifyGamificacion(){
         boolean a = false;
         while(!a){
-            System.out.println("*********************************");
-            System.out.println("*1. Modificar Retos:            *");
-            System.out.println("*2. Modificar Trofeos:          *");
-            System.out.println("*3. Modificar Premios:          *");
-            System.out.println("*4. Incluir Trofeos             *");
-            System.out.println("*5. Incluir Premios             *");
-            System.out.println("*6. Reiniciar los premios       *");
-            System.out.println("*7. Cambio diario               *");
-            System.out.println("*8. Volver                      *");
-            System.out.println("*********************************");
+            System.out.println("**********************************");
+            System.out.println("* 1. Modificar Retos:            *");
+            System.out.println("* 2. Modificar Trofeos:          *");
+            System.out.println("* 3. Modificar Premios:          *");
+            System.out.println("* 4. Incluir Trofeos             *");
+            System.out.println("* 5. Incluir Premios             *");
+            System.out.println("* 6. Reiniciar los premios       *");
+            System.out.println("* 7. Cambio diario               *");
+            System.out.println("* 8. Volver                      *");
+            System.out.println("**********************************");
             int opcion = sn.nextInt();
             switch(opcion){
                 case 1:
@@ -165,15 +173,15 @@ public class Gamificacion{
                     break;
                 case 6:
                     reset = true;
-                    System.out.println("***************************");
-                    System.out.println("*Premios reiniciados      *");
-                    System.out.println("***************************");
+                    System.out.println("****************************");
+                    System.out.println("* Premios reiniciados      *");
+                    System.out.println("****************************");
                     break;
                 case 7:
                     Default.daily = true;
-                    System.out.println("***************************");
-                    System.out.println("*Se cambio el dia         *");
-                    System.out.println("***************************");
+                    System.out.println("****************************");
+                    System.out.println("* Se cambio el dia         *");
+                    System.out.println("****************************");
                     break;
                 case 8:
                     a = true;
@@ -201,37 +209,41 @@ public class Gamificacion{
     }
     public static void modifyChallenge(){
         Challenge[] chall = Default.challenge;
-        System.out.println("Seleccione un reto");
+        System.out.println("***********************************************************************************************");
+        System.out.println("************************************** Seleccione un reto *************************************");
         int a = 0;
+        System.out.println("***********************************************************************************************");
         for(Challenge chall6:chall){
             System.out.println(a+". "+chall6.action+ " " + chall6.target + " " + chall6.goal+" : [progreso]/" + chall6.target+ " [Puntos : "+chall6.points+"]");
             a++;
         }
+        System.out.println("***********************************************************************************************");
         int challenge1 = sn.nextInt();
+        System.out.println("***********************************************************************************************");
         if(challenge1 < 3 && challenge1 >= 0){
             System.out.println(chall[challenge1].action+ " " + chall[challenge1].target + " " + chall[challenge1].goal+" : [progreso]/" + chall[challenge1].target+ " [Puntos : "+chall[challenge1].points+"]");
             System.out.println("***********************************************************************************************");
             System.out.println("Estructura del reto: [accion] [requisito] [objetivo]: [progreso]/[requisito]  [puntos:[puntos]]");
             System.out.println("***********************************************************************************************");
-            System.out.println("*Modificar requisito:          *");
-            System.out.println("********************************");
+            System.out.println("* Modificar requisito:          *");
+            System.out.println("*********************************");
             chall[challenge1].target = sn.nextInt();
-            System.out.println("********************************");
-            System.out.println("*Modificar puntos:             *");
-            System.out.println("********************************");
+            System.out.println("*********************************");
+            System.out.println("* Modificar puntos:             *");
+            System.out.println("*********************************");
             chall[challenge1].points = sn1.nextInt();
-            System.out.println("********************************");
-            System.out.println("*Resultado de la modificacion: *");
-            System.out.println("*************************************************************************************************************************");
+            System.out.println("*********************************");
+            System.out.println("* Resultado de la modificacion: *");
+            System.out.println("***********************************************************************************************");
             System.out.println(chall[challenge1].action+ " " + chall[challenge1].target + " " + chall[challenge1].goal+" : [progreso]/" + chall[challenge1].target+ " [Puntos : "+chall[challenge1].points+"]");
-            System.out.println("*************************************************************************************************************************");
+            System.out.println("***********************************************************************************************");
             chall[challenge1].modify = true;
         }
         else if (challenge1 < 6 && challenge1 >= 3){
             System.out.println("***********************************************************************************************");
             System.out.println("Estructura del reto: [accion] [requisito] [objetivo]: [progreso]/[requisito] [puntos:[puntos]]:");
             System.out.println("***********************************************************************************************");
-            System.out.println("*Modificar puntos:             *");
+            System.out.println("* Modificar puntos:            *");
             System.out.println("********************************");
             chall[challenge1].points = sn.nextInt();
             System.out.println("*************************************************************************************************************************");
@@ -319,27 +331,34 @@ public class Gamificacion{
     }
     public static void modifyTrophies() {
         Trophies[] trop = Default.trophie;
-        System.out.println("Seleccione un trofeo");
+        System.out.println("********************************************************************************");
+        System.out.println("******************x******** Seleccione un trofeo *******************************");
         int a = 0;
+        System.out.println("********************************************************************************");
         for(Trophies trop6:trop){
             if(trop6 != null){
                 System.out.println(a+". "+trop6.action+" : [progreso]/" + trop6.target+ " [Puntos : "+trop6.points+"]");
                 a++;
             }
         }
+        System.out.println("********************************************************************************");
         int index = sn.nextInt();
         if(index < Trophies.getLength(trop) && index >= 0){
             System.out.println("********************************************************************************");
             System.out.println("Estructura del trofeo: [accion] : [progreso]/[requisito]  [puntos:[puntos]]");
             System.out.println("********************************************************************************");
-            System.out.println("Modificar requisito:");
+            System.out.println("* Modificar requisito:          *");
+            System.out.println("*********************************");
             trop[index].target = sn.nextInt();
-            System.out.println("Modificar puntos:");
+            System.out.println("*********************************");
+            System.out.println("* Modificar puntos:             *");
+            System.out.println("*********************************");
             trop[index].points = sn1.nextInt();
-            System.out.println("Resultado de la modificacion:");
-            System.out.println("***********************************************************************************************");
+            System.out.println("*********************************");
+            System.out.println("* Resultado de la modificacion: *");
+            System.out.println("********************************************************************************");
             System.out.println(trop[index].action+" : [progreso]/" + trop[index].target+ " [Puntos : "+trop[index].points+"]");
-            System.out.println("***********************************************************************************************");
+            System.out.println("********************************************************************************");
             trop[index].modify = true;
         }
         else{

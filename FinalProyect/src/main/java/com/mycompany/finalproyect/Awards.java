@@ -40,19 +40,19 @@ public class Awards {
     public static void buyAwards(Awards awards){
         boolean x = false;
         while(!x){
-            System.out.println("***********************");
-            System.out.println("*Canjear premio?      *");
-            System.out.println("***********************");
-            System.out.println("*1. Si                *");
-            System.out.println("*2. No                *");
-            System.out.println("***********************");
+            System.out.println("*****************************");
+            System.out.println("* Canjear premio?           *");
+            System.out.println("*****************************");
+            System.out.println("* 1. Si                     *");
+            System.out.println("* 2. No                     *");
+            System.out.println("*****************************");
             int op2 = sn.nextInt();
             switch(op2){
                 case 1:
                     if(awards.exchange == true){
-                        System.out.println("***************************");
-                        System.out.println("*Ya reclamaste este premio*");
-                        System.out.println("***************************");
+                        System.out.println("*****************************");
+                        System.out.println("* Ya reclamaste este premio *");
+                        System.out.println("*****************************");
                     }
                     else if(awards.exchange == false && awards.cost <= User.points){
                         awards.exchange = true;
@@ -80,7 +80,7 @@ public class Awards {
         while(!x){
             int y = 1;
             System.out.println("***********************************************************");
-            System.out.println("Seleccionar un premio:");
+            System.out.println("****************** Seleccionar un premio ******************");
             System.out.println("***********************************************************");
             for(Awards aw: awards2){
                 if(aw != null){
@@ -95,7 +95,7 @@ public class Awards {
                 }
             }
             System.out.println("***********************************************************");
-            System.out.println("0. Volver");
+            System.out.println("* 0. Volver                                               *");
             System.out.println("***********************************************************");
             int op =sn.nextInt();
             if(op <= getLength(awards2) && op > 0){
