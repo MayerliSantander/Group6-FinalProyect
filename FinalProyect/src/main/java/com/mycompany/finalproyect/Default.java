@@ -85,15 +85,15 @@ public class Default {
     }
     public static Awards[] defaultAwards(){
         Awards[] awards1 = new Awards[100];
-        awards1[0] = new Awards("Refresco chico", 100);
-        awards1[1] = new Awards("Palomitas de maiz chico", 200);
-        awards1[2] = new Awards("Palomitas de mariz acarameladas chico", 200);
-        awards1[3] = new Awards("Refresco mediano", 300);
-        awards1[4] = new Awards("Palomitas de maiz mediano", 300);
-        awards1[5] = new Awards("Palomitas de maiz acarameladas mediano", 300);
-        awards1[6] = new Awards("Refresco grande", 400);
-        awards1[7] = new Awards("Palomitas de maiz grande", 400);
-        awards1[8] = new Awards("Palomitas de maiz acarameladas grande", 400);
+        awards1[0] = new Awards("Refresco chico", 10);
+        awards1[1] = new Awards("Palomitas de maiz chico", 20);
+        awards1[2] = new Awards("Palomitas de mariz acarameladas chico", 20);
+        awards1[3] = new Awards("Refresco mediano", 40);
+        awards1[4] = new Awards("Palomitas de maiz mediano", 50);
+        awards1[5] = new Awards("Palomitas de maiz acarameladas mediano", 50);
+        awards1[6] = new Awards("Refresco grande", 60);
+        awards1[7] = new Awards("Palomitas de maiz grande", 70);
+        awards1[8] = new Awards("Palomitas de maiz acarameladas grande", 70);
         awards1[9] = new Awards("Entrada gratis", 2000);
         awards1[10] = new Awards("Entrada gratis a pelicula 3D", 2100);
         return awards1;

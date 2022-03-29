@@ -20,42 +20,26 @@ public class menu {
         Scanner reader = new Scanner(System.in);
 
             do {
-                System.out.println("********************************************************");
-                System.out.println("*****|||*******    Elija una opción.      ******|||*****");
-                System.out.println("*****|||*******   1.- Reservar entradas.  ******|||*****");
-                System.out.println("*****|||*******   2.- Salir.              ******|||*****");
-                System.out.println("********************************************************");
-                int op = reader.nextInt();
-                if (op == 1) {
-                    System.out.println("*****|||*******  Elija la pelicula que desea reservar.   *****|||******* ");
-                    cinema.billboard.showMoviesList();
-                    System.out.println("************************************************************************");
-
-                    int chosenMovie = reader.nextInt();
-                    if (chosenMovie > cinema.billboard.movies.size() || chosenMovie <= 0) {
-                        System.out.println("*****|||*******  Numero no esta en la lista   *****|||******* ");
-
-
-                    }
-                    else tickets.menu();
-
-                }
-                    if (op == 2) {
-                        System.out.println("*********************************************************************************");
-                        System.out.println("*****|||*******   Gracias por su compra               *****|||******* ");
-
-
-                        break;
-                    }
-
+                System.out.println("Elija la pelicula que desea reservar:");
+                cinema.billboard.showMoviesList();
+                int chosenMovie = reader.nextInt();
+                if (chosenMovie > cinema.billboard.movies.size() || chosenMovie <= 0){
+                    System.out.println("Numero no esta en la lista");
+                } else tickets.menu();
+                System.out.println("\n******************************************"
+                    + "\n************ELIGE UNA OPCION************"
+                    + "\n*****************************************"
+                    + "\n* 1. Reservar más Entradas              *"
+                    + "\n* 2. Salir                              *"
+                    + "\n*****************************************");
+                op= reader.nextInt();
             }
-
                 while (op != 2) ;
-                System.out.println("*****|||*******   Total dinero por entradas: "+tickets.do2+"       *****|||******* ");
-                System.out.println("*****|||*******   Total de entradas: "+tickets.ntickets+"                *****|||******* ");
+                System.out.println("*****|||*******   Total dinero por entradas: "+tickets.do2+"   *****|||******* ");
+                System.out.println("*****|||*******   Total de entradas: "+tickets.ntickets+"            *****|||******* ");
                 money = tickets.do2;
-                System.out.println("*****|||*******   El dineto total a pagar es: "+money+"      *****|||*******");
-                System.out.println("*********************************************************************************");
+                System.out.println("*****|||*******   Total a pagar es: "+money+"            *****|||*******");
+                System.out.println("*****************************************************************");
 
 
 

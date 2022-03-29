@@ -6,7 +6,6 @@ package com.mycompany.finalproyect;
 
 import java.util.Scanner;
 
-import javax.xml.validation.Validator;
 
 /**
  *
