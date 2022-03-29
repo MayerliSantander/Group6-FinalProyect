@@ -20,16 +20,20 @@ public class menu {
         Scanner reader = new Scanner(System.in);
 
             do {
-                System.out.println("Elija una opción.");
-                System.out.println("1.- Reservar entradas.");
-                System.out.println("2.- Salir.");
+                System.out.println("********************************************************");
+                System.out.println("*****|||*******    Elija una opción.      ******|||*****");
+                System.out.println("*****|||*******   1.- Reservar entradas.  ******|||*****");
+                System.out.println("*****|||*******   2.- Salir.              ******|||*****");
+                System.out.println("********************************************************");
                 int op = reader.nextInt();
                 if (op == 1) {
-                    System.out.println("Elija la pelicula que desea reservar.");
+                    System.out.println("*****|||*******  Elija la pelicula que desea reservar.   *****|||******* ");
                     cinema.billboard.showMoviesList();
+                    System.out.println("************************************************************************");
+
                     int chosenMovie = reader.nextInt();
                     if (chosenMovie > cinema.billboard.movies.size() || chosenMovie <= 0) {
-                        System.out.println("Numero no esta en la lista");
+                        System.out.println("*****|||*******  Numero no esta en la lista   *****|||******* ");
 
 
                     }
@@ -37,7 +41,8 @@ public class menu {
 
                 }
                     if (op == 2) {
-                        System.out.println("Gracias por su compra");
+                        System.out.println("*********************************************************************************");
+                        System.out.println("*****|||*******   Gracias por su compra               *****|||******* ");
 
 
                         break;
@@ -46,10 +51,12 @@ public class menu {
             }
 
                 while (op != 2) ;
-                System.out.println("Total dinero por entradas: " + tickets.do2);
-                System.out.println("Total de entradas: " + tickets.ntickets);
+                System.out.println("*****|||*******   Total dinero por entradas: "+tickets.do2+"       *****|||******* ");
+                System.out.println("*****|||*******   Total de entradas: "+tickets.ntickets+"                *****|||******* ");
                 money = tickets.do2;
-                System.out.println("El dineto total a pagar es: " + money);
+                System.out.println("*****|||*******   El dineto total a pagar es: "+money+"      *****|||*******");
+                System.out.println("*********************************************************************************");
+
 
 
     }
